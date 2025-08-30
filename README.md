@@ -280,4 +280,3 @@ git remote add origin YOUR_REPO_URL
 git push -u origin main
 ```
 
-> Want a generated hero image next? Say the vibe (soft gradient? line art heart?) and I’ll produce variants and drop them into `/public/hero.svg`.
