@@ -1,19 +1,34 @@
 'use client'
 
+import { useEffect, useMemo, useRef, useState } from 'react'
+import BreathingWidget from '../components/BreathingWidget'
+import { getStats, saveStats, incReflections, type Stats } from '../lib/storage'
+
+const COPIES = [
+  'Take 15s to breathe. In 4, hold 4, out 6. You got this.',
+  'Tiny pause, big payoff.',
+  'Snooze me if now’s not it. Your pace, your rules.',
+  'Write one line: what do I need right now?',
+]
+
 export default function Page() {
-  return (
-    <main className="p-6 max-w-5xl mx-auto">
-      <img
-        src="/hero.svg"
-        alt="CTRL hero"
-        className="mx-auto block w-full max-w-[900px] h-auto rounded-xl shadow-sm"
-      />
-      <h1 className="text-3xl font-semibold mt-6 text-center">
-        CTRL — Create Time to Reflect &amp; Listen
-      </h1>
-      <p className="mt-2 text-slate-600 text-center">
-        Deployment check: if you see this, Next.js is running.
-      </p>
-    </main>
-  )
-}
+  const [mode, setMode] = useState<'focus'|'scroll'|'calm'>('focus')
+  const [showPrompt, setShowPrompt] = useState(false)
+  const [copyIdx, setCopyIdx] = useState(0)
+  const [stats, setStats] = useState<Stats>(getStats())
+  const tRef = useRef<NodeJS.Timeout | null>(null)
+
+  const cadence = useMemo(() => ({ focus: 25, scroll: 8, calm: 0 }), [])
+
+  useEffect(() => {
+    if (mode === 'calm') return
+    if (tRef.current) clearInterval(tRef.current)
+    tRef.current = setInterval(() => {
+      setShowPrompt(true)
+      setCopyIdx(i => (i + 1) % COPIES.length)
+    }, cadence[mode] * 60 * 1000)
+    return () => { if (tRef.current) clearInterval(tRef.current) }
+  }, [mode, cadence])
+
+  const onBreathComplete = (seconds = 30) => {
+    const add
