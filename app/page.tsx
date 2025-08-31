@@ -9,10 +9,10 @@ const COPIES = [
   'Tiny pause, big payoff.',
   'Snooze me if now’s not it. Your pace, your rules.',
   'Write one line: what do I need right now?',
-]
+] as const
 
 export default function Page() {
-  const [mode, setMode] = useState<'focus'|'scroll'|'calm'>('focus')
+  const [mode, setMode] = useState<'focus' | 'scroll' | 'calm'>('focus')
   const [showPrompt, setShowPrompt] = useState(false)
   const [copyIdx, setCopyIdx] = useState(0)
   const [stats, setStats] = useState<Stats>(getStats())
