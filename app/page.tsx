@@ -2,10 +2,18 @@
 
 export default function Page() {
   return (
-    <main className="p-6 max-w-4xl mx-auto">
-      <img src="/hero.svg" alt="CTRL hero" className="w-64" />
-      <h1 className="text-2xl font-semibold mt-4">CTRL — Create Time to Reflect & Listen</h1>
-      <p className="mt-2 text-slate-600">Deployment check: if you see this, Next.js is running.</p>
+    <main className="p-6 max-w-5xl mx-auto">
+      <img
+        src="/hero.svg"
+        alt="CTRL hero"
+        className="mx-auto block w-full max-w-[900px] h-auto rounded-xl shadow-sm"
+      />
+      <h1 className="text-3xl font-semibold mt-6 text-center">
+        CTRL — Create Time to Reflect &amp; Listen
+      </h1>
+      <p className="mt-2 text-slate-600 text-center">
+        Deployment check: if you see this, Next.js is running.
+      </p>
     </main>
   )
 }
