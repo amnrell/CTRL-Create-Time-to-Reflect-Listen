@@ -23,3 +23,5 @@ A tiny, privacy-first focus aid that nudges you to pause, breathe, and reflect.
 ```bash
 npm install
 npm run dev
+
+npm run build && npm start
