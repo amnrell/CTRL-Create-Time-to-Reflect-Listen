@@ -1,19 +1,25 @@
 # CTRL — Create Time to Reflect & Listen (Next.js + TS)
 
-Minimal Next.js + TypeScript + Tailwind starter for CTRL.
+A tiny, privacy-first focus aid that nudges you to pause, breathe, and reflect.
 
-## Dev
+**Live:** https://ctrl-create-time-to-reflect-listen-ten.vercel.app
+
+![CTRL hero](public/hero.svg)
+
+---
+
+## Features
+- ⏱️ Gentle “heartbeat” prompts (configurable cadence)
+- 🌬️ 4–4–6 breathing widget
+- 📈 Local stats only (no accounts, no tracking)
+- 💤 Snooze reminders
+
+## Tech
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- Vercel for hosting
+
+## Quick Start (dev)
 ```bash
 npm install
 npm run dev
-```
-
-## Build
-```bash
-npm run build && npm start
-```
-
-## Notes
-- Interactive components are marked `"use client"`.
-- Local stats are stored in `localStorage` (client-only).
-- Replace `public/hero.svg` with your preferred hero (see hero pack).
