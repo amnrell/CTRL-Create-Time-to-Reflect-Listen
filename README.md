@@ -8,20 +8,23 @@ A tiny, privacy-first focus aid that nudges you to pause, breathe, and reflect.
 
 ---
 
-## Features
-- ⏱️ Gentle “heartbeat” prompts (configurable cadence)
+## ✨ Features
+- ⏱️ Gentle “heartbeat” prompts (configurable cadence modes)
 - 🌬️ 4–4–6 breathing widget
 - 📈 Local stats only (no accounts, no tracking)
 - 💤 Snooze reminders
+- ⚡ Next.js App Router + Tailwind, deploys on Vercel
 
-## Tech
-- Next.js (App Router) + TypeScript
-- Tailwind CSS
-- Vercel for hosting
+---
 
-## Quick Start (dev)
+## 🧑‍💻 Quick Start (Web)
+
 ```bash
+# install
 npm install
+
+# dev server
 npm run dev
 
+# production build & start
 npm run build && npm start
